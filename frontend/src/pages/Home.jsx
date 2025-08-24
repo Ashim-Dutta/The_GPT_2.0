@@ -77,7 +77,7 @@ const Home = () => {
               </div>
               <button
                 onClick={() => setIsLoggedIn(false)}
-                className="text-sm text-gray-400 hover:text-green-400 transition-colors"
+                className="text-sm text-gray-400 hover:text-green-400 transition-colors cursor-pointer bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 hover:border-green-500"
               >
                 Sign Out
               </button>

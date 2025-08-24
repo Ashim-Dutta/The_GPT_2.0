@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast} from 'react-toastify';
 
 const Register = () => {
   const {
@@ -13,7 +14,6 @@ const Register = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    console.log("Register data:", data);
     try {
       const res = await axios.post(
         "http://localhost:3000/api/auth/register",
@@ -28,6 +28,7 @@ const Register = () => {
         { withCredentials: true }
       );
       console.log("Registration successful:", res.data);
+      toast.success("Registration successful!");
       navigate("/");
     } catch (err) {
       console.error("Registration error:", err);
